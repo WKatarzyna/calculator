@@ -1,0 +1,46 @@
+.calculator-buttons > button {
+    width: 110%;
+    height: 110px;
+    border: none;
+    background-color: #fffbfb;
+    background-image: linear-gradient(60deg, #fffbfb 0%, #e8e8e8 100%);
+    font-family: "Segoe UI Light", sans-serif;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.calculator-buttons > button:hover {
+    background-color: grey;
+    background-image: linear-gradient(60deg, #696969 0%, #545454 100%);
+    color: white;
+}
+
+button.btn-equal {
+    grid-column: span 2;
+    background: #cf2d71;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cf2d71, #cf2d71);
+    background: linear-gradient(to right, #cf2d71, #cf2d71);
+    color: white;
+
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+}
+
+.calculator-body {
+    position: absolute;
+    /*top: 50%;*/
+    left: 50%;
+    margin: 100px 0 0 -150px;
+    overflow: hidden;
+    border-radius: 3%;
+}
+
+button.btn-blue {
+    background: #673AB7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #512DA8, #673AB7);
+    background: linear-gradient(to right, #512DA8, #673AB7);
+    color: white;
+}
