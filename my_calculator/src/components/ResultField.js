@@ -5,7 +5,7 @@ const ResultField = (props) => {
 
     return (
         <div className={'result'}>
-            <p className={'result--text'}>{props.result}</p>
+            {props.result}
         </div>
     )
 

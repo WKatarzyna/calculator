@@ -7,17 +7,46 @@ import ResultField from "./components/ResultField";
 class App extends Component {
 
     state = {
-        result: ""
+        operations: "",
+        result: 0
+    };
+
+    handleClick = (button) => {
+
+        if (button === "=") {
+            this.calculate(button)
+        } else if (button === "C") {
+            this.resetResult()
+        } else {
+            this.setState({
+                operations: this.state.operations + button
+            })
+            this.setState(prevState => ({
+                operations: `${prevState.operations}`.replace(/([\/\+-/*=])([\/\+\-\*=])/gi, button)
+            }))
+
+        }
+    };
+    calculate = () => {
+
+    }
+
+    resetResult = () => {
+        this.setState({
+            result: 0,
+            operations: ""
+        })
     };
 
     render() {
-
         return (
             <div className={'container'}>
                 <div className={'calculator-body'}>
-                    <ResultField result={this.state.result}/>
-                    {this.state.result}
-                    <Keyboard/>
+                    <div className={'output'}>
+                        <div className={'calculations'}>{this.state.operations}</div>
+                        <ResultField result={this.state.result}/>
+                    </div>
+                    <Keyboard parentCallback={this.handleClick}/>
                 </div>
             </div>);
     }

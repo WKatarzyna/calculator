@@ -10,7 +10,6 @@
     .container {
         width: 900px;
 
-
     }
 }
 
@@ -23,6 +22,43 @@
 
 .container {
     margin: 0 auto;
+    padding: 0;
     position: relative;
 
+
 }
+
+.calculator-body {
+    width: 400px;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 650px;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 110px);
+    background: blue;
+    overflow: hidden;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: black;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: white;
+}
+
+.calculations {
+    color: indianred;
+    font-size: 1.6rem;
+}
+
