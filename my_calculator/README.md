@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+#  Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##ReactJS | Calculator App 
 
-## Available Scripts
+A calculator that provides the essential arithmetic operations, an expression builder.
 
-In the project directory, you can run:
+###The application is composed of the following components:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+*Calculator - The primary (root) component for managing all Calculator and underlying component state.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+*ResultField - Displays the calculator result
 
-### `npm test`
+Keypad - Used to input operands as well as execute various operations against those operands
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Main functionalities
+Calculator provides the result of math equation based on mathematical input operations displayed in output field.
 
-### `npm run build`
+#####Developed With
+- React - A javascript library for building user interfaces
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#####Requires Node.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Type the following commands in the terminal to verify your node and npm versions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. node -v
+2. npm -v
+####Installation
+Follow the following steps to get development environment running.
 
-### `npm run eject`
+Clone 'project' repository from GitHub
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+git clone https://github.com/WKatarzyna/calculator.git
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Install node modules
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+cd my_calculator
+npm install
+####Build
+- To Build application
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+npm run build
+- Build application and start watching for changes
 
-## Learn More
+npm run build:watch
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+####Run
+- Run start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This will run the 'serve' npm task
 
-### Code Splitting
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+####Authors
+Katarzyna Wisła
+- coding, styling and programming functionality, based on graphic design.
+Graphic design By  [Dia Dea](https://www.behance.net/diadea3007) Free Calculator PSD

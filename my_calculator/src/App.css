@@ -30,17 +30,16 @@
 
 .calculator-body {
     width: 400px;
-    margin-top: 5%;
+    margin-top: 1.5%;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 3%;
+    border-radius: 2%;
     display: grid;
     justify-content: center;
     align-content: center;
-    height: 650px;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 110px);
-    background: blue;
+    background: rgb(168, 168, 168);
     overflow: hidden;
 }
 
@@ -61,4 +60,5 @@
     color: indianred;
     font-size: 1.6rem;
 }
+
 
