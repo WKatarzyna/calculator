@@ -14,15 +14,18 @@ class App extends Component {
     };
 
     handleClick = (pressedValue) => {
-
+        // --- Parse a calculation string into an array of numbers and operators and perform a calculation expressed as an array of operators and numbers
         if (pressedValue === "=") return this.calculate(this.parseCalculationString(this.state.equation));
         else if (pressedValue === "C") {
+            //clear to outputs/exit
             this.resetResult();
         }
         else if (pressedValue === "+/-" && this.state.equation.length > 0) {
+            //go to function check value and invert it
             this.invertNumber();
         }
         else if (pressedValue === "%" && this.state.equation.length < 1) return this.setState(prevState => ({equation: prevState.equation}));
+        else if (pressedValue === "." && this.state.equation.length < 1) return this.setState( {equation: "0" +pressedValue});
         else return this.initialValueIsNumber(pressedValue);
 
     };
@@ -35,8 +38,7 @@ class App extends Component {
 
             }))
         } else {
-            let initialValue = 0;
-            if ((this.state.equation[initialValue] === '0' && this.state.equation.length === 1 && ['-', '+', '/', '*', '%'].indexOf(pressedValue) === -1)) {
+            if ((this.state.equation[0] === '0' && this.state.equation.length === 1 && ['-', '+', '/', '*', '%','.'].indexOf(pressedValue) === -1)) {
                 this.setState({
                         equation: pressedValue
                     }
@@ -82,24 +84,24 @@ class App extends Component {
                 )
             }
 
-
         }
 
     };
 
-    parseCalculationString = (str) => {
+    parseCalculationString = (equation) => {
         let calculation = [],
             current = '';
-        for (var i = 0, ch; ch = str.charAt(i); i++)  {
-            if (['-', '+', '/', '*', '%'].indexOf(ch) > -1) {
-                if (current === '' && ch === '-') {
+        // eslint-disable-next-line
+        for (let i = 0, character; character = equation.charAt(i); i++)  {
+            if (['-', '+', '/', '*', '%'].indexOf(character) > -1) {
+                if (current === '' && character === '-') {
                     current += '-';
                 } else {
-                    calculation.push(parseFloat(current), ch);
+                    calculation.push(parseFloat(current), character);
                     current = '';
                 }
             } else {
-                current += str.charAt(i);
+                current += equation.charAt(i);
             }
         }
         if (current !== '') {
@@ -110,16 +112,16 @@ class App extends Component {
 
     calculate = (calc) => {
         try {
-            let ops = [
+            let operands = [
                     {'%': (a, b) => b * a / 100},
                     {'*': (a, b) => a * b, '/': (a, b) => a / b},
                     {'+': (a, b) => a + b, '-': (a, b) => a - b}],
                 newCalc = [],
                 currentOp;
-            for (let i = 0; i < ops.length; i++) {
+            for (let i = 0; i < operands.length; i++) {
                 for (let j = 0; j < calc.length; j++) {
-                    if (ops[i][calc[j]]) {
-                        currentOp = ops[i][calc[j]];
+                    if (operands[i][calc[j]]) {
+                        currentOp = operands[i][calc[j]];
                     } else if (currentOp) {
                         newCalc[newCalc.length - 1] =
                             currentOp(newCalc[newCalc.length - 1], calc[j]);

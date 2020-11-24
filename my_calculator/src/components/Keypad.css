@@ -1,3 +1,4 @@
+/*Styling*/
 .btn {
     border: none;
     background-color: #fffbfb;
@@ -6,28 +7,11 @@
     font-size: 22px;
     cursor: pointer;
     outline: none;
+}
 
-}
-@keyframes explode {
-    0% {
-        width: 0px;
-        height: 0px;
-        margin-left: 0px;
-        margin-top: 0px;
-        background-color: rgba(42, 53, 80,0.2);
-    }
-    100% {
-        width: 400px;
-        height: 400px;
-        margin-left: -200px;
-        margin-top: -200px;
-        background-color: rgba(20, 180, 87,0.8);
-    }
-}
-.btn:hover{
-    transform: scale(0.80);
-    border-radius: 5%;
-    box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.75);
+.btn:hover {
+    background-color: #696969;
+    background-image: linear-gradient(60deg, #fffbfb 0%, #696969 100%);
 }
 
 
@@ -45,6 +29,25 @@ button.btn-blue {
     background: linear-gradient(to right, #512DA8, #673AB7);
     color: white;
 }
+
 button.active {
-    transform: scale(2);
+    background-color: gray;
+    background-image: linear-gradient(60deg, #fffbfb 0%, rgba(255, 120, 120, 0.31) 100%);
+    animation: pulsing 0.5s linear forwards;
+    border-radius: 5%;
+    box-shadow: 2px 4px 5px 0 rgba(0, 0, 0, 0.75);
+}
+/*Animations*/
+@keyframes pulsing {
+    0% {
+        opacity: 1;
+        transform: scaleY(0.60) scaleX(0.60);
+    }
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(0.80);
+    }
 }
